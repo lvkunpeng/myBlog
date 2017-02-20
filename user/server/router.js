@@ -93,7 +93,7 @@ router.get('/api/delete:id', function (req, res) {
 //增加标签
 router.post('/api/addTap', function (req, res) {
   db.TagList.find({tagName: req.body.tagName}, function (err, data) {
-    if (data&&data.length==0) {
+    if (data&&data.length==0) { 
       new db.TagList(req.body).save(function (error, data) {
         if (error) {
           res.status(500).send()
